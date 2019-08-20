@@ -4,9 +4,19 @@ A database driver for the owen-it/laravel-auditing package. Store audits using l
 
 ## Installation
 
-This driver requires that you are using `owen-it/laravel-auditing: ^8.0`. Provided this is fulfilled,
-you can install the driver like so:
+Ensure you are using `owen-it/laravel-auditing: ^8.0`.
 
+This package is not published on [Packagist](https://packagist.org/), so add its url in the repositories list of your app in `composer.json`.
+```
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/despatates/laravel-auditing-job-database"
+    }
+]
+```
+
+Then install the driver:
 ```
 composer require despatates/laravel-auditing-job-database
 ```
