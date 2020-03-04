@@ -1,4 +1,5 @@
 <?php
+
 namespace Levell\Auditing\Jobs;
 
 use Illuminate\Bus\Queueable;
