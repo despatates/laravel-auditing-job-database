@@ -13,10 +13,8 @@ class JobDatabaseAuditingServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/config/audit.php' => $this->app['path.config'] . DIRECTORY_SEPARATOR . 'audit.php',
-            ]);
-        }
+        $this->publishes([
+            __DIR__ . '/config/audit.php' => config_path('audit.php'),
+        ], 'config');
     }
 }
