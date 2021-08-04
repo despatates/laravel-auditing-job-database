@@ -27,7 +27,10 @@ class JobDatabasePruneAudit implements ShouldQueue
     public function handle()
     {
         $model = $this->classname;
-        $object = new $model($this->data);
+        // Use unguarded callback to populate `id` property
+        $object = $model::unguarded(function () use ($model) {
+            return new $model($this->data);
+        });
 
         (new Database())->prune($object);
     }
